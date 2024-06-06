@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;500;600;900&display=swap');
+
+:root {
+  font-family: "Barlow", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+::-webkit-scrollbar {
+  height: 0px;
+  width: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(3px);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #97FEED;
+  -webkit-border-radius: 10ex;
+}
+
+::-webkit-scrollbar-corner {
+  background: #fafafa;
+}
+
+html{
+  overflow-x: hidden;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.active-link{
+  color: #97FEED
+}
+
+.scrollbar-works::-webkit-scrollbar {
+  width: 0em;
+}
+
+.scrollbar-works::-webkit-scrollbar-thumb{
+  background-color: transparent;
+}
+
+.curved{
+  position: relative;
+  border-radius: 0;
+  -webkit-transition: border-radius 0.1s ease-in-out;
+  transition: border-radius 0.1s ease;
+}
+
+.curved.right{
+  border-radius: 0px 100rem 100rem 0px;
+}
+
+.curved.left{
+  border-radius: 100rem 0px 0px 100rem;
+}
+
+.curved::before,
+.curved::after
+{
+  content: '';
+  width: 0%;
+  -webkit-transition: width 0.1s ease-in-out;
+  transition: width 0.1s ease-in-out;
+}
+
+.curved.right::before{
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: -10px;
+  border-radius: 0% 100% 0% 0%;
+  width: 10%;
+  height: 110%;
+  background-color: white;
+  transform: translate(-10px) rotate(6deg);
+}
+
+.curved.left::after{
+  display: block;
+  position: absolute;
+  border-radius: 100% 0% 0% 0%;
+  width: 10%;
+  height: 110%;
+  top: 0px;
+  right: -10px;
+  background-color: white;
+  transform: translate(10px) rotate(-6deg);
+}

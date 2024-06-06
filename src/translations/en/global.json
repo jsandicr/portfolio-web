@@ -1,0 +1,29 @@
+{
+    "header": {
+        "home": "Home",
+        "about": "About",
+        "works": "Works",
+        "experience": "Experience"
+    },
+    "about": {
+        "title": "About",
+        "intro": "Hello, I´m Jorge Sandi",
+        "description": "Software engineer based in San Jose, Costa Rica. I love the tech world, mainly frontend development. My passion is creating engaging and function digital experiences."
+    },
+    "works": {
+        "title": "Works"
+    },
+    "experience": {
+        "title": "Experience",
+        "1": {
+            "date": "Jan 2022 - Jan 2023",
+            "title": "Tester and Web Developer",
+            "description": "Development of web pages for the internal control of the company. internal control. In addition, exhaustive testing of both manual and automated manual as well as automated"
+        },
+        "2": {
+            "date": "Jan 2023 - Current",
+            "title": "Mobile Developer",
+            "description": "Development of mobile applications focused on the efficient management efficient management of products, warehouses and distribution distribution processes."
+        }
+    }
+}

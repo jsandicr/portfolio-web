@@ -1,0 +1,11 @@
+.paper {
+    transition: transform .1s ease-in-out;
+}
+  
+.right-wave {
+    transform: rotate(2.2deg);
+}
+
+.left-wave {
+    transform: rotate(-2.2deg);
+}

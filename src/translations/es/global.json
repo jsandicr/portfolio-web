@@ -1,0 +1,29 @@
+{
+    "header":{
+        "home": "Inicio",
+        "about": "Sobre mi",
+        "works": "Trabajos",
+        "experience": "Experiencia"
+    },
+    "about": {
+        "title": "Acerca de",
+        "intro": "Hola, soy Jorge Sandi",
+        "description": "Ingeniero de software  en San José, Costa Rica. Amo el mundo tecnológico, especialmente el desarrollo frontend. Mi pasión es crear experiencias digitales atractivas y funcionales."
+    },
+    "works": {
+        "title": "Trabajos"
+    },
+    "experience": {
+        "title": "Experiencia",
+        "1": {
+            "date": "Ene 2022 - Ene 2023",
+            "title": "Tester y Desarrollador Web",
+            "description": "Desarrollo de páginas web para el control interno de la empresa. Control interno exhaustivo. Además, pruebas exhaustivas tanto manuales como automatizadas."
+        },
+        "2": {
+            "date": "Ene 2023 - Actualidad",
+            "title": "Desarrollador Móvil",
+            "description": "Desarrollo de aplicaciones móviles centradas en la gestión eficiente de productos, almacenes y procesos de distribución."
+        }
+    }
+}
