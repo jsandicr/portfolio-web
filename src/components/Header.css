@@ -1,0 +1,15 @@
+@media screen and (min-width: 30em) {
+    .menu {
+      display: block;
+    }
+  }
+  
+  @media screen and (min-width: 48em) {
+    .menu {
+        display: none;
+    }
+  }
+
+.menu{
+    background-color: 'red';
+}

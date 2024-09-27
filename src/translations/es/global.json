@@ -11,7 +11,21 @@
         "description": "Ingeniero de software  en San José, Costa Rica. Amo el mundo tecnológico, especialmente el desarrollo frontend. Mi pasión es crear experiencias digitales atractivas y funcionales."
     },
     "works": {
-        "title": "Trabajos"
+        "title": "Trabajos",
+        "1": {
+            "title": "Style Dealer",
+            "description": "Una tienda web interactiva y con capacidad de respuesta centrada en ofrecer una experiencia de usuario fluida. La plataforma permite a los usuarios examinar productos, añadir artículos al carrito de la compra y navegar por diferentes categorías, aunque no incluye gestión de inventario ni procesamiento de pagos.",
+            "codeDescription": "El proyecto de tienda web se desarrolló utilizando React con Vite para optimizar el rendimiento y los tiempos de carga. Se aplicó Tailwind CSS para conseguir un estilo atractivo y con capacidad de respuesta. Se desplegó en Vercel, lo que permitió actualizaciones automáticas y un flujo de trabajo eficiente.",
+            "apiInfo": "Se desarrolló una API Node.js y Express para gestionar los datos de los usuarios mediante MongoDB. Permite operaciones CRUD (crear, leer, actualizar, eliminar) a través de rutas RESTful y utiliza Mongoose para el modelado de datos, junto con middleware para gestionar peticiones y CORS.",
+            "github": "Consulta el código fuente en"
+        },
+        "2": {
+            "title": "Gastos",
+            "description": "Una aplicación móvil diseñada para simplificar la división de gastos del hogar o entre amigos. Los usuarios pueden agregar gastos, asignar montos a diferentes participantes y llevar un seguimiento de quién debe qué a quién. La app incluye funcionalidades para la gestión de grupos y la visualización de balances individuales.",
+            "codeDescription": "El proyecto de la aplicación móvil se desarrolló utilizando React Native, lo que permite la compatibilidad tanto con dispositivos iOS como Android. Se implementó un diseño intuitivo y responsivo con Styled Components, asegurando una experiencia de usuario coherente y atractiva.",
+            "apiInfo": "La aplicación utiliza una API desarrollada en Node.js con Express para gestionar las operaciones de gastos. La base de datos de Firebase almacena los datos de usuarios, grupos y transacciones, permitiendo operaciones en tiempo real. Se utiliza Firebase Authentication para la gestión segura de usuarios y Firestore para el almacenamiento de datos.",
+            "github": "Consulta el código fuente en"
+        }
     },
     "experience": {
         "title": "Experiencia",

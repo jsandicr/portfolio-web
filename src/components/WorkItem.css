@@ -1,0 +1,7 @@
+.mainBox:hover{
+    cursor: pointer;
+}
+  
+.curved {
+    border-radius: 10px;
+}

@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react'
-import { Box, Text } from '@chakra-ui/react'
+import { Box, Text, useMediaQuery } from '@chakra-ui/react'
 import { useCurrentScrollWorks } from '../hooks/useCurrentScrollWorks'
 import { WorkItem } from '../components/WorkItem'
 import { works } from '../const'
@@ -8,8 +8,8 @@ import './Works.css'
 
 export const Works = () => {
     const [ t ] = useTranslation("global")
+    const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
 
-    const [scrollDirection, setScrollDirection] = useState('down')
     const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY)
     const [isScrolling, setIsScrolling] = useState(false)
 
@@ -20,7 +20,6 @@ export const Works = () => {
     useEffect(() => {
         const handleScrollDirection = () => {
             const currentScrollPos = window.scrollY
-            setScrollDirection(currentScrollPos > prevScrollPos ? 'down' : 'up')
             setPrevScrollPos(currentScrollPos);
 
             clearTimeout(isScrolling);
@@ -40,8 +39,7 @@ export const Works = () => {
     }, [prevScrollPos, isScrolling])
 
     return(
-        <>
-        <Box id='works' height={`${works.length * 150}vh`} width='100%'>
+        <Box id='works' height={`${works.length * 130}vh`} width='100%'>
             <Box height='100vh' width='100%' display='flex' flexDirection='column' gap='10px' justifyContent='center' alignItems='center' position='sticky' top='0'>
                 <Text
                     fontSize='4xl'
@@ -63,17 +61,15 @@ export const Works = () => {
                     }}
                 >
                     <Box
-                    style={{
-                        display: 'flex',
-                        gap: '120px',
-                        transform: `translate(-${currentScroll * 1.1}px)`
-                    }}
+                    display= 'flex'
+                    gap= '120px'
+                    transform= {`translate(-${isLargerThan768 ? currentScroll * 1.5 : currentScroll * 0.3}px)`}
                     >    
                         <Box style={{width: '180vw', height: '100%', paddingLeft: '50vw'}}></Box>
-                        {works.map(({id, name})=>{
+                        {works.map((work)=>{
                             return (
-                                <WorkItem key={id} scrollDirection={scrollDirection} isScrolling={isScrolling}>
-                                    {name}
+                                <WorkItem key={work.id}>
+                                    {work}
                                 </WorkItem>
                             )
                         })}
@@ -81,6 +77,5 @@ export const Works = () => {
                 </Box>
             </Box>
         </Box>
-        </>
     )
 }

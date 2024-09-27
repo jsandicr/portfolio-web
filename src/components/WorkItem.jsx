@@ -1,44 +1,61 @@
-import { useColorMode, Box, Text } from '@chakra-ui/react'
-import { home_text } from "../../theme"
+import './WorkItem.css';
+import { useColorMode, Box, Text, useMediaQuery } from '@chakra-ui/react';
+import { home_text } from "../../theme";
+import { Link, useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+export const WorkItem = ({children}) => {
 
-export const WorkItem = ({children, scrollDirection, isScrolling}) => {
+    const {id, name, img} = children;
+    const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
 
-    const { colorMode } = useColorMode()
+
+    const { colorMode } = useColorMode();
+    const navigate = useNavigate();
 
     const colorText = () => {
-        if(colorMode === 'light') return home_text.light
-        else return home_text.dark
-    }
+        if(colorMode === 'light') return home_text.light;
+        else return home_text.dark;
+    };
 
-    const scrollMoveDiv = () => {
-        if(isScrolling == null) return 'normal'
-        return scrollDirection === 'down' ? 'right' : 'left'
-    }
+    const handleClick = (e) => {
+        // Navegar a la nueva ruta después de un pequeño retraso
+        setTimeout(() => {
+            navigate(`/works/${id}`);
+        }, 300); // Duración de la animación
+    };
 
     return(
-        <Box
-            display='flex' 
-            flexDirection='column'
-            borderStyle='none'
-        >
-            <div
-                className={`my-atropos curved ${scrollMoveDiv()}`}
-                style={{width: '25em', height: '15em', margin: '70px 0 50px', borderStyle: 'none'}}>
+        <motion.div
+        onClick={handleClick}
+        style={{ cursor: 'pointer'}} 
+        whileHover={{ scale: [null, 1.02, 1.02] }}
+        transition={{ duration: 0.3 }}>
+            <Box
+                display='flex' 
+                flexDirection='column'
+                borderStyle='none'
+                className='mainBox'
+            >
+                <Box
+                    width={{sm: '15em', lg: '25em'}}
+                    height={{sm: '7.5 em', lg: '15em'}}
+                    margin='70px 0 50px'
+                    >
                     <img
-                        src="/src/assets/images/lugares_increibles.png"
-                        className={`paper`}
-                        style={{width:'100%', height:'100%', objectFit:'cover', objectPosition: 'center' }}/>    
-            </div>
-            <Text
-                margin='-80px -150px 0 0'
-                fontSize='4xl'
-                fontWeight='900'
-                textAlign='center'
-                color='transparent'
-                as='h2'
-                zIndex={2}
-                style={{WebkitTextStroke: `2px ${colorText()}`}}
-                >{children}</Text>
-        </Box>
-    )
-}
+                        src={img}
+                        style={{width:'100%', height:'100%', objectFit:'cover', objectPosition: 'center', borderRadius: 10 }}/>    
+                </Box>
+                <Text
+                    margin='-80px -150px 0 0'
+                    fontSize='4xl'
+                    fontWeight='900'
+                    textAlign='center'
+                    color='transparent'
+                    as='h2'
+                    zIndex={2}
+                    style={{WebkitTextStroke: `2px ${colorText()}`}}
+                    >{name}</Text>
+            </Box>
+        </motion.div>
+    );
+};

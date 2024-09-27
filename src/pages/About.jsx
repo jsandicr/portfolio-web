@@ -23,7 +23,7 @@ export const About = () => {
         >
             <Grid
                 templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)'}}
-                gap={{base: '60px', md: 2}}
+                gap={{base: '60px',  md: 2, lg: '60px'}}
             >
                 <GridItem
                     w='100%'
@@ -44,10 +44,11 @@ export const About = () => {
                     w='100%'
                     display='grid'
                     gap={3}
+                    padding={{base: '40px', md: '', lg: ''}}
                 >
                     <Box
                         fontWeight='600'
-                        fontSize='6xl'
+                        fontSize={{base: '3xl', md: '6xl', lg: '6xl'}}
                     >
                         {t("about.intro").substring(0, 16)}
                         <Box

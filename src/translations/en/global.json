@@ -11,7 +11,21 @@
         "description": "Software engineer based in San Jose, Costa Rica. I love the tech world, mainly frontend development. My passion is creating engaging and function digital experiences."
     },
     "works": {
-        "title": "Works"
+        "title": "Works",
+        "1": {
+            "title": "Style Dealer",
+            "description": "An interactive and responsive web store focused on providing a smooth user experience. The platform allows users to browse products, add items to the shopping cart, and navigate through different categories, though it does not include inventory management or payment processing.",
+            "codeDescription": "The web store project was developed using React with Vite to optimize performance and loading times. Tailwind CSS was applied for responsive and appealing styling. It was deployed on Vercel, enabling automatic updates and an efficient workflow.",
+            "github": "Check out the source code on",
+            "apiInfo": "A Node.js and Express API was developed to manage user data using MongoDB. It allows CRUD (create, read, update, delete) operations through RESTful routes and utilizes Mongoose for data modeling, along with middleware to handle requests and CORS." 
+        },
+        "2": {
+            "title": "Gastos",
+            "description": "A mobile application designed to simplify the division of household expenses or expenses among friends. Users can add expenses, assign amounts to different participants, and track who owes what to whom. The app includes features for group management and individual balance tracking.",
+            "codeDescription": "The mobile application project was developed using React Native, enabling compatibility with both iOS and Android devices. A responsive and intuitive design was implemented using Styled Components, ensuring a consistent and attractive user experience.",
+            "apiInfo": "The application uses an API developed in Node.js with Express to manage expense operations. The Firebase database stores user, group, and transaction data, allowing real-time operations. Firebase Authentication is used for secure user management, and Firestore is utilized for data storage.",
+            "github": "Check out the source code at"
+        }        
     },
     "experience": {
         "title": "Experience",
