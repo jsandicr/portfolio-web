@@ -61,7 +61,7 @@ export const works = [
     {
         id: 3,
         name: 'Web Scrapper',
-        img: '/src/assets/images/lugares_increibles.png'
+        img: '/lugares_increibles.png'
     }
 ]
 
