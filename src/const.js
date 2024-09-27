@@ -39,10 +39,10 @@ export const works = [
     {
         id: 1,
         name: 'Style Dealer',
-        img: '/public/style-dealer-preview.jpg',
-        demo: '/public/style-dealer-demo-unscreen.gif',
-        imgCode: '/public/style-dealer-code.jpg',
-        imgApiCode: '/public/style-dealer-api-code.jpg',
+        img: '/style-dealer-preview.jpg',
+        demo: '/style-dealer-demo-unscreen.gif',
+        imgCode: '/style-dealer-code.jpg',
+        imgApiCode: '/style-dealer-api-code.jpg',
         codeLink: 'https://github.com/jsandicr/style-dealer',
         apiLink: 'https://github.com/jsandicr/api-style-dealer',
         model: 'https://my.spline.design/macbookprocopy-45b81f7788fb6122d8067bfc64c58558/'
@@ -50,10 +50,10 @@ export const works = [
     {
         id: 2,
         name: 'Gastos App',
-        img: '/public/gastos-preview.jpeg',
-        demo: '/public/gastos-demo.gif',
-        imgCode: '/public/gastos-code.jpg',
-        imgApiCode: '/public/gatos-api-code.jpg',
+        img: '/gastos-preview.jpeg',
+        demo: '/gastos-demo.gif',
+        imgCode: '/gastos-code.jpg',
+        imgApiCode: '/gatos-api-code.jpg',
         codeLink: 'https://github.com/jsandicr/style-dealer',
         apiLink: 'https://github.com/jsandicr/api-style-dealer',
         model: 'https://my.spline.design/iphone14procopy-6f87bcadce9275239bfa600424aa702c/'
