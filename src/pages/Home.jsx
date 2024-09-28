@@ -53,7 +53,7 @@ export const Home = () => {
     }, [currentScroll])
 
     return (
-        <Box marginTop={{base: '-15vh', md: '', lg:''}} id="home" height='100vh' width='100%' display='flex' justifyContent='center' alignItems='center' position='relative'>
+        <Box overflowX='hidden' marginTop={{base: '-15vh', md: '', lg:''}} id="home" height='100vh' width='100%' display='flex' justifyContent='center' alignItems='center' position='relative'>
             <Box className="headline-container">
                 <div id="text-behind" ref={textBehind} style={{color: colorText(), transform: `scale(${parallax1})` }}>JORGE SANDI<br />PORTFOLIO</div>
                 <div id="text-behind-blur" ref={textBehindBlur} style={{ color: colorText(), transform: `scale(${parallax1})` }}>JORGE SANDI<br/>PORTFOLIO</div>

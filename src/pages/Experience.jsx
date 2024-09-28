@@ -1,4 +1,4 @@
-import { useColorMode, Box, Text, UnorderedList, ListItem } from '@chakra-ui/react'
+import { useColorMode, Box, Text, UnorderedList, ListItem, useMediaQuery } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { active_link } from '/theme'
 import { experience_list } from '../const'
@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next'
 export const Experience = () => {
 
     const [ t ] = useTranslation("global")
+    const [isLargerThan768] = useMediaQuery("(min-width: 768px)")
 
     const {colorMode} = useColorMode()
 
@@ -32,18 +33,23 @@ export const Experience = () => {
             >
                 {t("experience.title")}
             </Text>
+
             <Box
-                display='flex'
                 padding='110px 50px'
                 w='100%'
-                justifyContent='center'
             >
-                <hr
-                    style={{height: '1px', width: '100%', backgroundColor: colorText(), borderRadius: '10px'}}
-                />
+                {
+                    isLargerThan768 ? (
+                        <hr
+                            style={{height: '1px', width: '100%', backgroundColor: colorText(), borderRadius: '10px'}}
+                        />
+                    ) : (
+                        <></>
+                    )
+                }
                 <UnorderedList
                     display='flex'
-                    position='absolute'
+                    flexDirection={{base: "column", md: 'row', lg: 'row'}}
                     justifyContent='space-around'
                     gap='100px'
                     width='100%'
