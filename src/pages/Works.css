@@ -10,3 +10,11 @@
 .left-wave {
     transform: rotate(-2.2deg);
 }
+
+.scrollbar-works::-webkit-scrollbar {
+    width: 0em;
+}
+
+.scrollbar-works::-webkit-scrollbar-thumb {
+background-color: transparent;
+}

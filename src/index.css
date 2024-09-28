@@ -25,14 +25,6 @@
   background: #fafafa;
 }
 
-html{
-  overflow-x: hidden;
-}
-
-body{
-  overflow-x: hidden;
-}
-
 *{
   margin: 0;
   padding: 0;
