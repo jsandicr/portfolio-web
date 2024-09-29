@@ -14,6 +14,7 @@ export const Intro = ({work}) => {
 
     return(
             <Box
+                id="intro"
                 height='100%'
                 padding={{base: '50px 0', lg: '100px 0'}}
                 width='100%'

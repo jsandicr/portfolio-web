@@ -20,7 +20,7 @@ export const WorkItem = ({children}) => {
     const handleClick = () => {
         // Navegar a la nueva ruta después de un pequeño retraso
         setTimeout(() => {
-            navigate(`/works/${id}`);
+            navigate(`/works/${id}/#intro`);
         }, 300); // Duración de la animación
     };
 

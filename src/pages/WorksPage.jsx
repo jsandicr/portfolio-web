@@ -17,13 +17,13 @@ const WorksPage = () => {
     const [work, setWork ] = useState('')
 
     useEffect(() => {
-
         const w = works.find(w => w.id == id);
         if (!w) {
             navigate('/');
         }
         setWork(w);
     }, [id, navigate]);
+    
 
     return(
         <Box

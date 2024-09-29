@@ -25,7 +25,7 @@ export const useActiveLink = () => {
     useEffect(() => {
         const currentPath = location.pathname + location.hash;
         setActiveLink(currentPath);
-
+        
         const scrollToTarget = (hash) => {
             const target = document.getElementById(hash.replace('#', ''));
             if (target) {
