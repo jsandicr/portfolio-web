@@ -24,12 +24,14 @@ export const Technologies = ({work}) => {
                 gap={{base: '10px', md: '', lg: ''}}
                 marginTop='10px'
             >
-                <GridItem>
+                <GridItem
+                    display='flex'
+                    justifyContent='center'>
                     <Box display='flex'
                     justifyContent='center'
                     alignItems='center'
-                    height={work.type == 2 ? {base: '50vh', lg: '70vh'} : ''}
-                    width={work.type == 2 ? {base: '40vw', lg: '25vw'} : ''}
+                    height={work.type == 2 ? {base: '50vh', lg: '60vh'} : {base: '35vh', lg: '40vh'}}
+                    width={work.type == 2 ? {base: '40vw', lg: '25vw'} : {base: '100vw', lg: '45vw'}}
                     paddingLeft={{ base: '0px', md: '120px', lg: '150px'}}>
                         <img
                             src={work.demo}
@@ -42,6 +44,8 @@ export const Technologies = ({work}) => {
                     <Box
                         display='flex'
                         justifyContent='center'
+                        alignItems='center'
+                        height='100%'
                         padding='30px'>
                         <Text
                             width={{base: '', lg: '50%'}}

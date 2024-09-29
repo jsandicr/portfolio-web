@@ -64,7 +64,14 @@ export const works = [
     {
         id: 3,
         name: 'Web Scrapper',
-        img: '/lugares_increibles.png'
+        img: '/webScrapper-preview.jpg',
+        demo: '/webScrapper-demo.gif',
+        imgCode: '/gastos-code.jpg',
+        imgApiCode: '/gatos-api-code.jpg',
+        codeLink: 'https://github.com/jsandicr/style-dealer',
+        apiLink: 'https://github.com/jsandicr/api-style-dealer',
+        model: 'https://my.spline.design/iphone14procopy-6f87bcadce9275239bfa600424aa702c/',
+        type: 1
     }
 ]
 

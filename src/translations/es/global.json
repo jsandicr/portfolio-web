@@ -25,7 +25,19 @@
             "codeDescription": "El proyecto de la aplicación móvil se desarrolló utilizando React Native, lo que permite la compatibilidad tanto con dispositivos iOS como Android. Se implementó un diseño intuitivo y responsivo con Styled Components, asegurando una experiencia de usuario coherente y atractiva.",
             "apiInfo": "La aplicación utiliza una API desarrollada en Node.js con Express para gestionar las operaciones de gastos. La base de datos de Firebase almacena los datos de usuarios, grupos y transacciones, permitiendo operaciones en tiempo real. Se utiliza Firebase Authentication para la gestión segura de usuarios y Firestore para el almacenamiento de datos.",
             "github": "Consulta el código fuente en"
+        },
+        "3": {
+            "title": "Web Scrapper",
+            "description": "Este proyecto automatiza la recogida de datos de partidos de fútbol desde una página web, recopilando información sobre equipos, resultados y competiciones, y guardando los datos en un archivo para su posterior análisis.",
+            "codeDescription": "Este proyecto utiliza Selenium y Scrapy para automatizar la extracción de datos de partidos de fútbol de una página web. Selenium se encarga de la navegación y la interacción con elementos dinámicos, mientras que Scrapy facilita la recopilación de datos. La información, incluyendo equipos, resultados y competiciones, se organiza y exporta a un archivo Excel con OpenPyXL, y el script se asegura de que el navegador se cierra al final del proceso.",
+            "apiInfo": "",
+            "github": "Consulta el código fuente en"
         }
+    },
+    "typeCode":{
+        "1": "Aplicacion Movil",
+        "2": "Aplicacion Web",
+        "3": "Api"
     },
     "experience": {
         "title": "Experiencia",

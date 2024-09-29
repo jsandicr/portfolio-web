@@ -2,11 +2,13 @@ import { Box, Text, useColorMode, Icon, GridItem, Grid } from "@chakra-ui/react"
 import { active_link } from '/theme';
 import { useTranslation } from "react-i18next";
 import { motion } from 'framer-motion'
+import { useEffect, useState } from "react";
 
 export const ApiInfo = ({work}) => {
     const { id } = work
     const [ t ] = useTranslation("global")
     const { colorMode } = useColorMode();
+    const [ hasApi, setHasApi] = useState(false)
 
     const colorText = () => {
         return colorMode === 'light' ? active_link.light : active_link.dark;
@@ -16,6 +18,10 @@ export const ApiInfo = ({work}) => {
         if(colorMode === 'light') return active_link.light 
         return active_link.dark
     }
+
+    useEffect(()=>{
+        setHasApi(t(`works.${id}.apiInfo`).length > 0)
+    }, [])
 
     return (
         <Box
@@ -31,7 +37,7 @@ export const ApiInfo = ({work}) => {
                 Code
             </Text>
             <Grid
-                templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)'}}
+                templateColumns={{base: 'repeat(1, 1fr)', md: hasApi ? 'repeat(2, 1fr)' : 'repeat(1, 1fr)'}}
                 gap={{base: '10px', md: '', lg: ''}}
             >
                 <GridItem>
@@ -47,13 +53,13 @@ export const ApiInfo = ({work}) => {
                             fontWeight='600'
                             as='h3'
                             color= {colorText()}>
-                            Mobile Application
+                                {t(`typeCode.${work.type}`)}
                         </Text>
                         <Text
                             width={{base: '', lg: '50%'}}
                             fontWeight='300'>
                             {t(`works.${id}.codeDescription`)}
-                            <Text>
+                            <Text display='flex'>
                                 {t(`works.${id}.github`)}{' '}
                                 <a href={work.codeLink} target="_blank" rel="noopener noreferrer" style={{display: 'flex', marginLeft: '5px'}}>
                                     Github
@@ -76,7 +82,9 @@ export const ApiInfo = ({work}) => {
                         </Text>
                     </Box>
                 </GridItem>
-                <GridItem>
+                {
+                hasApi ?
+                    <GridItem>
                     <Box
                         display='flex'
                         flexDirection='column'
@@ -89,7 +97,7 @@ export const ApiInfo = ({work}) => {
                             fontWeight='600'
                             as='h3'
                             color= {colorText()}>
-                            Api
+                            { t(`typeCode.${3}`)}
                         </Text>
                         <Text
                             fontWeight='300'
@@ -118,6 +126,8 @@ export const ApiInfo = ({work}) => {
                         </Text>
                     </Box>
                 </GridItem>
+                : <></>
+            }
             </Grid>
         </Box>
     );

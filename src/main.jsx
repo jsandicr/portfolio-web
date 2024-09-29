@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { ChakraProvider, ColorModeScript, useColorMode } from '@chakra-ui/react'
 import App from './App.jsx'
 import './index.css'
@@ -44,6 +44,7 @@ const AppWrapper = () => {
         <Routes>
           <Route path="/" Component={App} />
           <Route path="/works/:id" Component={WorksPage} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </AnimatePresence>
     </I18nextProvider>
