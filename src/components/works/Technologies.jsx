@@ -1,10 +1,17 @@
-import { Box, Grid, GridItem, Text } from "@chakra-ui/react"
+import { Box, Grid, GridItem, Text, useColorMode } from "@chakra-ui/react"
 import { useTranslation } from "react-i18next"
+import { active_link } from "../../../theme"
 
 export const Technologies = ({work}) => {
 
     const { id } = work
     const [ t ] = useTranslation("global")
+    const { colorMode } = useColorMode()
+
+    const colorText = () => {
+        if(colorMode === 'light') return active_link.light 
+        return active_link.dark
+    }
 
     return(
         <Box
@@ -16,9 +23,14 @@ export const Technologies = ({work}) => {
             gap='10px'
             justifyContent='center'
             alignItems='center'>
-            <Text fontSize='4xl' fontWeight='600' textAlign='center' as='h2'>
-                Demo
-            </Text>
+                <Box display='flex' alignItems='center'>
+                    <Text fontSize='4xl' fontWeight='600' textAlign='center' as='h2'>
+                        Demo
+                    </Text>
+                    <hr
+                        className="typing"
+                        style={{width: '35px', height: '1px', backgroundColor: colorText(), rotate: '90deg', marginLeft: '-10px'}}/>
+                </Box>
             <Grid
                 templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)'}}
                 gap={{base: '10px', md: '', lg: ''}}

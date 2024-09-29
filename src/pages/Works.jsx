@@ -16,6 +16,29 @@ export const Works = () => {
     const currentScroll = useCurrentScrollWorks(ref);
 
     useEffect(() => {
+        const preventHorizontalScroll = (e) => {
+            // Allow vertical scroll but prevent horizontal scroll
+            if (e.deltaX !== 0 || e.touches?.[0].clientX !== undefined) {
+                e.preventDefault();
+            }
+        };
+
+        const preventHorizontalScrollRows = (e) => {
+            if (e.deltaX !== 0 || e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+                e.preventDefault();
+            }
+        };
+
+        window.addEventListener('wheel', preventHorizontalScrollRows, { passive: false });
+        window.addEventListener('touchmove', preventHorizontalScroll, { passive: false });
+
+        return () => {
+            window.removeEventListener('touchmove', preventHorizontalScroll);
+            window.removeEventListener('wheel', preventHorizontalScroll);
+        };
+    }, []);
+
+    useEffect(() => {
         const handleScrollDirection = () => {
             const currentScrollPos = window.scrollY;
             setPrevScrollPos(currentScrollPos);

@@ -1,9 +1,16 @@
-import { Box, Grid, GridItem, Text } from "@chakra-ui/react"
+import { Box, Grid, GridItem, Text, useColorMode } from "@chakra-ui/react"
 import { useTranslation } from "react-i18next"
+import { active_link } from "../../../theme"
 
 export const Intro = ({work}) => {
     const { id, model } = work
     const [ t ] = useTranslation("global")
+    const { colorMode } = useColorMode()
+
+    const colorText = () => {
+        if(colorMode === 'light') return active_link.light 
+        return active_link.dark
+    }
 
     return(
             <Box
@@ -15,14 +22,19 @@ export const Intro = ({work}) => {
                 gap='10px'
                 justifyContent='center'
                 alignItems='center'>
-                <Text
-                    fontSize='4xl'
-                    fontWeight='600'
-                    textAlign='center'
-                    as='h2'
-                >
-                    {t(`works.${id}.title`)}
-                </Text>
+                    <Box display='flex' alignItems='center'>    
+                        <Text
+                            fontSize='4xl'
+                            fontWeight='600'
+                            textAlign='center'
+                            as='h2'
+                            >
+                            {t(`works.${id}.title`)}
+                        </Text>
+                        <hr
+                            className="typing"
+                            style={{width: '35px', height: '1px', backgroundColor: colorText(), rotate: '90deg', marginLeft: '-10px'}}/>
+                    </Box>
                 <Grid
                     templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)'}}
                     gap={{base: '10px', md: '', lg: ''}}
@@ -53,7 +65,7 @@ export const Intro = ({work}) => {
                         <Box
                             width={{ base: "100%", sm: '500px', md: '600px', lg: "600px" }}
                             height="400px"
-                            marginLeft='40px'
+                            marginLeft={{base: '', lg: '40px'}}
                         >
                             <iframe
                                 src={model}

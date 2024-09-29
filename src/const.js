@@ -66,11 +66,11 @@ export const works = [
         name: 'Web Scrapper',
         img: '/webScrapper-preview.jpg',
         demo: '/webScrapper-demo.gif',
-        imgCode: '/gastos-code.jpg',
-        imgApiCode: '/gatos-api-code.jpg',
-        codeLink: 'https://github.com/jsandicr/style-dealer',
-        apiLink: 'https://github.com/jsandicr/api-style-dealer',
-        model: 'https://my.spline.design/iphone14procopy-6f87bcadce9275239bfa600424aa702c/',
+        imgCode: '',
+        imgApiCode: '',
+        codeLink: 'https://github.com/jsandicr/webscrapper',
+        apiLink: '',
+        model: 'https://my.spline.design/macbookprocopycopy-5ae9edd6378c57ab9fbd08789b6d2b82/',
         type: 1
     }
 ]

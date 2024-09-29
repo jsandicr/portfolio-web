@@ -21,7 +21,7 @@ export const ApiInfo = ({work}) => {
 
     useEffect(()=>{
         setHasApi(t(`works.${id}.apiInfo`).length > 0)
-    }, [])
+    }, [id])
 
     return (
         <Box
@@ -33,9 +33,14 @@ export const ApiInfo = ({work}) => {
             gap='10px'
             justifyContent='center'
             alignItems='center'>
-            <Text fontSize='4xl' fontWeight='600' textAlign='center' as='h2'>
-                Code
-            </Text>
+                <Box display='flex' alignItems='center'>
+                    <Text fontSize='4xl' fontWeight='600' textAlign='center' as='h2'>
+                        Code
+                    </Text>
+                    <hr
+                        className="typing"
+                        style={{width: '35px', height: '1px', backgroundColor: colorText(), rotate: '90deg', marginLeft: '-10px'}}/>
+                </Box>
             <Grid
                 templateColumns={{base: 'repeat(1, 1fr)', md: hasApi ? 'repeat(2, 1fr)' : 'repeat(1, 1fr)'}}
                 gap={{base: '10px', md: '', lg: ''}}
