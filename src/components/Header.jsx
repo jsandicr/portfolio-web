@@ -1,18 +1,11 @@
 import { useActiveLink } from '../hooks/useActiveLink'
-import { useColorMode, Box, UnorderedList, ListItem, Button, IconButton, MenuGroup, useMediaQuery } from "@chakra-ui/react"
+import { useColorMode, Box, UnorderedList, ListItem, Button, IconButton, Menu, MenuButton, MenuList, MenuItem, MenuGroup, useMediaQuery } from "@chakra-ui/react"
 import { SunIcon, MoonIcon, HamburgerIcon } from '@chakra-ui/icons'
 import { LinkHeader } from './LinkHeader'
 import { routes } from '../const'
 import { useTranslation } from "react-i18next";
 import i18n from 'i18next';
 import './Header.css'
-
-import {
-    Menu,
-    MenuButton,
-    MenuList,
-    MenuItem,
-} from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import { active_link } from '/theme';
 
@@ -77,7 +70,7 @@ export const Header = () => {
                                     color={() => colorLinkMenu(href, true)}
                                     key={name}
                                 >
-                                    <Link to={href}>
+                                    <Link to={href} style={{width: '100%'}}>
                                         {nameToShow()}
                                     </Link>
                                 </MenuItem>
