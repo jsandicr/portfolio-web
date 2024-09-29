@@ -31,6 +31,51 @@ i18n
 })
 
 const AppWrapper = () => {
+
+  useEffect(() => {
+    let startX = 0;
+    let startY = 0;
+
+    const preventHorizontalScroll = (e) => {
+        if (e.touches && e.touches.length === 1) {
+            const touch = e.touches[0];
+            const deltaX = touch.clientX - startX;
+            const deltaY = touch.clientY - startY;
+
+            // Permitir scroll vertical (deltaY), pero prevenir el horizontal (deltaX)
+            if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                e.preventDefault(); // Solo prevenimos si el desplazamiento es principalmente horizontal
+            }
+        }
+    };
+
+    const handleTouchStart = (e) => {
+        if (e.touches && e.touches.length === 1) {
+            const touch = e.touches[0];
+            startX = touch.clientX;
+            startY = touch.clientY;
+        }
+    };
+
+    // Solo prevenir el scroll horizontal de los eventos de teclado
+    const preventHorizontalScrollRows = (e) => {
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+            e.preventDefault();
+        }
+    };
+
+    window.addEventListener('touchstart', handleTouchStart, { passive: false });
+    window.addEventListener('touchmove', preventHorizontalScroll, { passive: false });
+    window.addEventListener('wheel', preventHorizontalScrollRows, { passive: false });
+
+    return () => {
+        window.removeEventListener('touchstart', handleTouchStart);
+        window.removeEventListener('touchmove', preventHorizontalScroll);
+        window.removeEventListener('wheel', preventHorizontalScrollRows);
+    };
+}, []);
+
+
   const { setColorMode } = useColorMode();
 
   useEffect(() => {
