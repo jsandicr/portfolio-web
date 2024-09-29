@@ -17,6 +17,8 @@ const WorksPage = () => {
     const [work, setWork ] = useState('')
 
     useEffect(()=>{
+         // Scroll to top when the component mounts
+         window.scrollTo(0, 0);
         const w = works.find(w => w.id == id)
         if(!w){
             navigate('/');

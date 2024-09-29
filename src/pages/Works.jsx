@@ -56,7 +56,7 @@ export const Works = () => {
                     <Box
                         display='flex'
                         gap='120px'
-                        transform={`translate(-${isLargerThan768 ? currentScroll * 1.5 : currentScroll * 0.3}px)`}>
+                        transform={`translate(-${isLargerThan768 ? currentScroll * 1.5 : currentScroll * 0.5}px)`}>
                         <Box style={{ width: '180vw', height: '100%', paddingLeft: '50vw' }}></Box>
                         {works.map((work) => {
                             return (

@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter, Route, Routes }  from 'react-router-dom'
-import { ChakraProvider, ColorModeScript } from '@chakra-ui/react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { ChakraProvider, ColorModeScript, useColorMode } from '@chakra-ui/react'
 import App from './App.jsx'
 import './index.css'
 import theme from '/theme'
@@ -10,9 +10,10 @@ import global_en from '/src/translations/en/global.json'
 import global_es from '/src/translations/es/global.json'
 import WorksPage from './pages/WorksPage.jsx'
 import { AnimatePresence } from 'framer-motion'
+import { useEffect } from 'react'
 
 i18n
-  .use(initReactI18next) 
+  .use(initReactI18next)
   .init({
     resources: {
       en: {
@@ -29,18 +30,31 @@ i18n
     }
 })
 
+const AppWrapper = () => {
+  const { setColorMode } = useColorMode();
+
+  useEffect(() => {
+    // Forzar el modo claro al montar el componente
+    setColorMode('light');
+  }, [setColorMode]);
+
+  return (
+    <I18nextProvider i18n={i18n}>
+      <AnimatePresence mode="wait">
+        <Routes>
+          <Route path="/" Component={App} />
+          <Route path="/works/:id" Component={WorksPage} />
+        </Routes>
+      </AnimatePresence>
+    </I18nextProvider>
+  )
+}
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-      <I18nextProvider i18n={i18n}>
-        <AnimatePresence mode="wait">
-          <Routes>
-            <Route path="/" Component={App} />
-            <Route path="/works/:id" Component={WorksPage} />
-          </Routes>
-        </AnimatePresence>
-      </I18nextProvider>
+      <AppWrapper />
     </ChakraProvider>
   </BrowserRouter>
 )

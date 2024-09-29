@@ -19,7 +19,7 @@ export const Experience = () => {
     return(
         <Box
             id="experience"
-            h='100vh'
+            h={{base: '', lg: '100vh'}}
             pt='110px'
             display='flex'
             flexDirection='column'
@@ -81,8 +81,6 @@ export const Experience = () => {
                                     <Text> {t(`experience.${id}.date`)}</Text>
                                     <Text>{t(`experience.${id}.title`)}</Text>
                                     <Text
-                                        display={{base: 'none', md: 'inline'}}
-                                        maxW='500px'
                                     >
                                         {t(`experience.${id}.description`)}
                                     </Text>

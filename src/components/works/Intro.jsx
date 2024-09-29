@@ -6,9 +6,15 @@ export const Intro = ({work}) => {
     const [ t ] = useTranslation("global")
 
     return(
-        <Box height={{sm: '100%', lg:'100vh' }}  width='100%'>
             <Box
-                height='100vh' width='100%' display='flex' flexDirection='column' gap='10px' justifyContent='center' alignItems='center'>
+                height='100%'
+                padding={{base: '50px 0', lg: '100px 0'}}
+                width='100%'
+                display='flex'
+                flexDirection='column'
+                gap='10px'
+                justifyContent='center'
+                alignItems='center'>
                 <Text
                     fontSize='4xl'
                     fontWeight='600'
@@ -19,7 +25,7 @@ export const Intro = ({work}) => {
                 </Text>
                 <Grid
                     templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)'}}
-                    gap={{base: '', sm: '10px', md: 2}}
+                    gap={{base: '10px', md: '', lg: ''}}
                 >
                     <GridItem
                         w='100%'
@@ -52,13 +58,12 @@ export const Intro = ({work}) => {
                             <iframe
                                 src={model}
                                 width="100%"
-                                height="100%" // Hace que el iframe ocupe todo el tamaño del Box
-                                style={{ border: "none" }} // Elimina el borde del iframe
+                                height="100%"
+                                style={{ border: "none" }}
                             ></iframe>
                         </Box>
                     </GridItem>
                 </Grid>
             </Box>
-        </Box>
     )
 }

@@ -1,7 +1,7 @@
 import './WorkItem.css';
 import { useColorMode, Box, Text, useMediaQuery } from '@chakra-ui/react';
 import { home_text } from "../../theme";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 export const WorkItem = ({children}) => {
 
@@ -17,7 +17,7 @@ export const WorkItem = ({children}) => {
         else return home_text.dark;
     };
 
-    const handleClick = (e) => {
+    const handleClick = () => {
         // Navegar a la nueva ruta después de un pequeño retraso
         setTimeout(() => {
             navigate(`/works/${id}`);
@@ -37,8 +37,8 @@ export const WorkItem = ({children}) => {
                 className='mainBox'
             >
                 <Box
-                    width={{sm: '15em', lg: '25em'}}
-                    height={{sm: '7.5 em', lg: '15em'}}
+                    width={isLargerThan768 ? '25em' : '15em'}
+                    height='15em'
                     margin='70px 0 50px'
                     >
                     <img

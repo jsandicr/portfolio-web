@@ -35,6 +35,7 @@ export const routes = [
     }
 ]
 
+//type 1= web, type 2=mobile
 export const works = [
     {
         id: 1,
@@ -45,18 +46,20 @@ export const works = [
         imgApiCode: '/style-dealer-api-code.jpg',
         codeLink: 'https://github.com/jsandicr/style-dealer',
         apiLink: 'https://github.com/jsandicr/api-style-dealer',
-        model: 'https://my.spline.design/macbookprocopy-45b81f7788fb6122d8067bfc64c58558/'
+        model: 'https://my.spline.design/macbookprocopy-45b81f7788fb6122d8067bfc64c58558/',
+        type: 1
     },
     {
         id: 2,
         name: 'Gastos App',
-        img: '/gastos-preview.jpeg',
+        img: '/gastos.jpeg',
         demo: '/gastos-demo.gif',
         imgCode: '/gastos-code.jpg',
         imgApiCode: '/gatos-api-code.jpg',
         codeLink: 'https://github.com/jsandicr/style-dealer',
         apiLink: 'https://github.com/jsandicr/api-style-dealer',
-        model: 'https://my.spline.design/iphone14procopy-6f87bcadce9275239bfa600424aa702c/'
+        model: 'https://my.spline.design/iphone14procopy-6f87bcadce9275239bfa600424aa702c/',
+        type: 2
     },
     {
         id: 3,
