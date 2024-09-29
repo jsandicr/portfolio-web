@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
-import { ChakraProvider, ColorModeScript, useColorMode } from '@chakra-ui/react'
+import { BrowserRouter, Navigate, Route, Router, Routes } from 'react-router-dom'
+import { ChakraProvider, ColorModeScript, Switch, useColorMode } from '@chakra-ui/react'
 import App from './App.jsx'
 import './index.css'
 import theme from '/theme'
@@ -11,6 +11,7 @@ import global_es from '/src/translations/es/global.json'
 import WorksPage from './pages/WorksPage.jsx'
 import { AnimatePresence } from 'framer-motion'
 import { useEffect } from 'react'
+import ScrollToTop from './components/ScrollToTop.jsx'
 
 i18n
   .use(initReactI18next)
@@ -29,6 +30,7 @@ i18n
       escapeValue: false
     }
 })
+
 
 const AppWrapper = () => {
 
@@ -86,7 +88,7 @@ const AppWrapper = () => {
   return (
     <I18nextProvider i18n={i18n}>
       <AnimatePresence mode="wait">
-        <Routes>
+      <Routes>
           <Route path="/" Component={App} />
           <Route path="/works/:id" Component={WorksPage} />
           <Route path="*" element={<Navigate to="/" />} />
@@ -98,6 +100,7 @@ const AppWrapper = () => {
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
+    <ScrollToTop />
     <ChakraProvider theme={theme}>
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
       <AppWrapper />

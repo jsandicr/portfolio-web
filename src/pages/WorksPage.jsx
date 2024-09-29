@@ -16,15 +16,15 @@ const WorksPage = () => {
     const bg = useColorModeValue(bg_color.light, bg_color.dark)
     const [work, setWork ] = useState('')
 
-    useEffect(()=>{
-         // Scroll to top when the component mounts
-         window.scrollTo(0, 0);
-        const w = works.find(w => w.id == id)
-        if(!w){
+    useEffect(() => {
+
+        const w = works.find(w => w.id == id);
+        if (!w) {
             navigate('/');
         }
-        setWork(w)
-    },[id, navigate])
+        setWork(w);
+    }, [id, navigate]);
+
     return(
         <Box
             bg={bg}>
