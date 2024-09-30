@@ -1,6 +1,7 @@
 import { Box, Grid, GridItem, Text, useColorMode } from "@chakra-ui/react"
 import { useTranslation } from "react-i18next"
 import { active_link } from "../../../theme"
+import Spline from "@splinetool/react-spline"
 
 export const Intro = ({work}) => {
     const { id, model } = work
@@ -58,24 +59,26 @@ export const Intro = ({work}) => {
                         </Box>
                     </GridItem>
                     <GridItem
-                        w='100%'
-                        display='flex'
-                        justifyContent='center'
-                        alignItems='center'
-                    >
-                        <Box
-                            width={{ base: "100%", sm: '500px', md: '600px', lg: "600px" }}
-                            height="400px"
-                            marginLeft={{base: '', lg: '40px'}}
-                        >
-                            <iframe
-                                src={model}
-                                width="100%"
-                                height="100%"
-                                style={{ border: "none" }}
-                            ></iframe>
-                        </Box>
-                    </GridItem>
+    w='100%'
+    display='flex'
+    justifyContent='center'
+    alignItems='center'
+>
+    <Box
+        width={{ base: "100%", sm: '500px', md: '600px', lg: "600px" }}
+        height="400px"
+        marginLeft={{base: '', lg: '40px'}}
+    >
+        {model ? (
+            <>
+                <Spline scene={model} style={{ width: '100%', height: '100%' }} />
+            </>
+        ) : (
+            <Text>Cargando modelo...</Text>
+        )}
+    </Box>
+</GridItem>
+
                 </Grid>
             </Box>
     )

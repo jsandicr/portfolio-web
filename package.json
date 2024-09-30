@@ -17,6 +17,8 @@
     "@motionone/utils": "10.16.3",
     "@react-three/drei": "9.86.3",
     "@react-three/fiber": "8.14.4",
+    "@splinetool/react-spline": "^4.0.0",
+    "@splinetool/runtime": "^1.9.28",
     "framer-motion": "^10.16.4",
     "i18next": "23.5.1",
     "react": "^18.2.0",

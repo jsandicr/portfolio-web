@@ -46,7 +46,7 @@ export const works = [
         imgApiCode: '/style-dealer-api-code.jpg',
         codeLink: 'https://github.com/jsandicr/style-dealer',
         apiLink: 'https://github.com/jsandicr/api-style-dealer',
-        model: 'https://my.spline.design/macbookprocopy-45b81f7788fb6122d8067bfc64c58558/',
+        model: 'https://prod.spline.design/ss9wJiieZWboUjD2/scene.splinecode',
         type: 1
     },
     {
@@ -58,7 +58,7 @@ export const works = [
         imgApiCode: '/gatos-api-code.jpg',
         codeLink: 'https://github.com/jsandicr/style-dealer',
         apiLink: 'https://github.com/jsandicr/api-style-dealer',
-        model: 'https://my.spline.design/iphone14procopy-6f87bcadce9275239bfa600424aa702c/',
+        model: 'https://prod.spline.design/lQv4ZjLJqarU0kCk/scene.splinecode',
         type: 2
     },
     {
@@ -70,7 +70,7 @@ export const works = [
         imgApiCode: '',
         codeLink: 'https://github.com/jsandicr/webscrapper',
         apiLink: '',
-        model: 'https://my.spline.design/macbookprocopycopy-5ae9edd6378c57ab9fbd08789b6d2b82/',
+        model: 'https://prod.spline.design/x4K5XmGosNSaC5Ku/scene.splinecode',
         type: 1
     }
 ]
