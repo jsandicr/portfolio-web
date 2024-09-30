@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
-import { ChakraProvider, ColorModeScript, useColorMode } from '@chakra-ui/react'
+import { ChakraProvider, ColorModeScript, useColorMode, useColorModeValue } from '@chakra-ui/react'
 import App from './App.jsx'
 import './index.css'
 import theme from '/theme'
@@ -11,6 +11,7 @@ import global_es from '/src/translations/es/global.json'
 import WorksPage from './pages/WorksPage.jsx'
 import { AnimatePresence } from 'framer-motion'
 import { useEffect } from 'react'
+import { bg_color } from '../theme.js'
 
 i18n
   .use(initReactI18next)
@@ -32,6 +33,21 @@ i18n
 
 
 const AppWrapper = () => {
+
+  const { colorMode } = useColorMode();
+  const bg = useColorModeValue(bg_color.light, bg_color.dark)
+
+
+  useEffect(() => {
+    // Cambiar el color de fondo del elemento html basado en el modo de color
+    const htmlElement = document.documentElement;
+      htmlElement.style.backgroundColor = bg
+
+    // Limpiar el efecto cuando el componente se desmonte
+    return () => {
+      htmlElement.style.backgroundColor = ''; // Restablecer al valor por defecto
+    };
+  }, [bg]);
 
   useEffect(() => {
     let startX = 0;
