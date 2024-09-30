@@ -32,11 +32,18 @@
             "codeDescription": "This project uses Selenium and Scrapy to automate the extraction of soccer match data from a web page. Selenium handles navigation and interaction with dynamic elements, while Scrapy facilitates data collection. The information, including teams, scores and competitions, is organized and exported to an Excel file with OpenPyXL, and the script ensures that the browser is closed at the end of the process.",
             "apiInfo": "",
             "github": "Check out the source code at"
+        },
+        "4": {
+            "title": "Ricodelik Portfolio",
+            "description": "This project was created for a friend of mine, who is a DJ, and aims to showcase his professional career through his performances, music sets, and events. The website allows you to explore his style, listen to his mixes, and stay informed about his upcoming shows.",
+            "codeDescription": "This project, built using React and React-Three, combines interactive web development with 3D modeling to create an engaging user experience. React handles the dynamic interface, while React-Three brings a 3D model to life, allowing for immersive and interactive visual elements. The code efficiently integrates both technologies to present a visually appealing, responsive, and interactive portfolio site.",
+            "apiInfo": "",
+            "github": "Check out the source code at"
         }
     },
     "typeCode":{
-        "1": "Mobile Application",
-        "2": "Web Application",
+        "1": "Web Application",
+        "2": "Mobile Application",
         "3": "Api"
     },
     "experience": {

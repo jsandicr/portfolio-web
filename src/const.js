@@ -56,8 +56,8 @@ export const works = [
         demo: '/gastos-demo.gif',
         imgCode: '/gastos-code.jpg',
         imgApiCode: '/gatos-api-code.jpg',
-        codeLink: 'https://github.com/jsandicr/style-dealer',
-        apiLink: 'https://github.com/jsandicr/api-style-dealer',
+        codeLink: 'https://github.com/jsandicr/gastos',
+        apiLink: 'https://github.com/jsandicr/gastos_api',
         model: 'https://prod.spline.design/lQv4ZjLJqarU0kCk/scene.splinecode',
         type: 2
     },
@@ -71,6 +71,18 @@ export const works = [
         codeLink: 'https://github.com/jsandicr/webscrapper',
         apiLink: '',
         model: 'https://prod.spline.design/x4K5XmGosNSaC5Ku/scene.splinecode',
+        type: 1
+    },
+    {
+        id: 4,
+        name: 'Ricodelik Portfolio',
+        img: '/ricodelik-preview.jpg',
+        demo: '/ricodelik-demo.gif',
+        imgCode: '',
+        imgApiCode: '',
+        codeLink: 'https://github.com/jsandicr/webscrapper',
+        apiLink: '',
+        model: 'https://prod.spline.design/uip2JTZuV-A3A5ec/scene.splinecode',
         type: 1
     }
 ]
