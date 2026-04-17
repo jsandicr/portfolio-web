@@ -1,6 +1,13 @@
 import { Box, Grid, GridItem, Text, useColorMode } from "@chakra-ui/react"
 import { useTranslation } from "react-i18next"
 import { active_link } from "../../../theme"
+import { motion } from "framer-motion"
+
+const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    exit: { opacity: 0, y: -30, transition: { duration: 0.4, ease: "easeIn" } }
+}
 
 export const Technologies = ({work}) => {
 
@@ -23,14 +30,22 @@ export const Technologies = ({work}) => {
             gap='10px'
             justifyContent='center'
             alignItems='center'>
-                <Box display='flex' alignItems='center'>
-                    <Text fontSize='4xl' fontWeight='600' textAlign='center' as='h2'>
-                        Demo
-                    </Text>
-                    <hr
-                        className="typing"
-                        style={{width: '35px', height: '1px', backgroundColor: colorText(), rotate: '90deg', marginLeft: '-10px'}}/>
-                </Box>
+                <motion.div
+                    variants={fadeInUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    exit="exit"
+                    viewport={{ once: false, amount: 0.3 }}
+                >
+                    <Box display='flex' alignItems='center'>
+                        <Text fontSize='4xl' fontWeight='600' textAlign='center' as='h2'>
+                            Demo
+                        </Text>
+                        <hr
+                            className="typing"
+                            style={{width: '35px', height: '1px', backgroundColor: colorText(), rotate: '90deg', marginLeft: '-10px'}}/>
+                    </Box>
+                </motion.div>
             <Grid
                 templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)'}}
                 gap={{base: '10px', md: '', lg: ''}}
@@ -53,18 +68,26 @@ export const Technologies = ({work}) => {
                     </Box>
                 </GridItem>
                 <GridItem>
-                    <Box
-                        display='flex'
-                        justifyContent='center'
-                        alignItems='center'
-                        height='100%'
-                        padding='30px'>
-                        <Text
-                            width={{base: '', lg: '50%'}}
-                            fontWeight='300'>
-                            {t(`works.${id}.codeDescription`)}
-                        </Text>
-                    </Box>
+                    <motion.div
+                        variants={fadeInUp}
+                        initial="hidden"
+                        whileInView="visible"
+                        exit="exit"
+                        viewport={{ once: false, amount: 0.3 }}
+                    >
+                        <Box
+                            display='flex'
+                            justifyContent='center'
+                            alignItems='center'
+                            height='100%'
+                            padding='30px'>
+                            <Text
+                                width={{base: '', lg: '50%'}}
+                                fontWeight='300'>
+                                {t(`works.${id}.codeDescription`)}
+                            </Text>
+                        </Box>
+                    </motion.div>
                 </GridItem>
             </Grid>
         </Box>

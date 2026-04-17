@@ -95,11 +95,6 @@ const AppWrapper = () => {
 
   const { setColorMode } = useColorMode();
 
-  useEffect(() => {
-    // Forzar el modo claro al montar el componente
-    setColorMode('light');
-  }, [setColorMode]);
-
   return (
     <I18nextProvider i18n={i18n}>
       <AnimatePresence mode="wait">

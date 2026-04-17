@@ -5,7 +5,14 @@ import { useCurrentScrollWorks } from '../hooks/useCurrentScrollWorks';
 import { WorkItem } from '../components/WorkItem';
 import { works } from '../const';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 import './Works.css';
+
+const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    exit: { opacity: 0, y: -30, transition: { duration: 0.4, ease: "easeIn" } }
+}
 
 export const Works = () => {
     const [t] = useTranslation("global");
@@ -39,9 +46,17 @@ export const Works = () => {
     return (
         <Box id='works' height={`${works.length * 130}vh`} width='100%'>
             <Box height='100vh' width='100%' display='flex' flexDirection='column' gap='10px' justifyContent='center' alignItems='center' position='sticky' top='0'>
-                <Text fontSize='4xl' fontWeight='600' textAlign='center' as='h2'>
-                    {t("works.title")}
-                </Text>
+                <motion.div
+                    variants={fadeInUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    exit="exit"
+                    viewport={{ once: false, amount: 0.3 }}
+                >
+                    <Text fontSize='4xl' fontWeight='600' textAlign='center' as='h2'>
+                        {t("works.title")}
+                    </Text>
+                </motion.div>
                 <Box
                     ref={ref}
                     className='scrollbar-works'
