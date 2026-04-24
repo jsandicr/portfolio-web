@@ -4,7 +4,7 @@ import { useScaleModel } from '../hooks/useScaleModel'
 
 export const Presentation = forwardRef(({ object, position}, ref) => {
 
-  const { scale } = useScaleModel()
+  const scale = useScaleModel()
 
   return (
     <group ref={ref}  dispose={null}>

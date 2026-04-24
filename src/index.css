@@ -1,12 +1,80 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;500;600;900&display=swap');
 
-:root {
+html {
   font-family: "Barlow", sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
+  --bg-color: #242424;
+  background-color: var(--bg-color) !important;
+}
+
+[data-theme="light"] {
+  --bg-color: white;
+}
+
+body {
+  background-color: var(--bg-color) !important;
+  min-height: 100vh;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  background-color: var(--bg-color);
+}
+
+.chakra-menu__menu-list {
+  background-color: var(--bg-color) !important;
+  border-color: var(--bg-color) !important;
+  background: var(--bg-color) !important;
+}
+
+[data-theme="light"] .chakra-menu__menu-list {
+  background-color: white !important;
+  border-color: white !important;
+}
+
+.chakra-menu__menuitem {
+  background-color: var(--bg-color) !important;
+  color: inherit !important;
+}
+
+.chakra-menu__menuitem:hover {
+  background-color: rgba(127, 127, 127, 0.1) !important;
+}
+
+[data-theme="light"] .chakra-menu__menuitem {
+  background-color: white !important;
+}
+
+.chakra-menu__group__title {
+  color: inherit !important;
+  background-color: var(--bg-color) !important;
+}
+
+.chakra-menu__group__title + div {
+  background-color: var(--bg-color) !important;
+}
+
+[data-theme="light"] .chakra-menu__group__title + div {
+  background-color: white !important;
+}
+
+[data-theme="light"] .chakra-menu__group__title {
+  background-color: white !important;
+  color: #0B666A !important;
+}
+
+[data-theme="dark"] .chakra-menu__group__title {
+  background-color: #242424 !important;
+  color: #97FEED !important;
+}
+
+section, [id] {
+  scroll-margin-top: 100px;
 }
 
 ::-webkit-scrollbar {

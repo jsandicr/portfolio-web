@@ -4,14 +4,14 @@ export const experience_list = [
         dateI: 'Jan 2022',
         dateF: 'Jan 2023',
         title: 'Tester and Web Developer',
-        description: 'Development of web pages for the internal control of the company. internal control. In addition, exhaustive testing of both manual and automated manual as well as automated'
+        description: 'Developed internal web applications to support company operations and process control. Conducted comprehensive testing, including both manual and automated approaches, to ensure software quality and reliability.'
     },
     {
         id: '2',
         dateI: 'Jan 2023',
         dateF: 'Current',
         title: 'Mobile Developer',
-        description: 'Development of mobile applications focused on the efficient management efficient management of products, warehouses and distribution distribution processes.'
+        description: 'Design and development of mobile applications focused on optimizing product management, warehouse operations, and distribution processes, improving efficiency and usability.'
     }
 ]
 

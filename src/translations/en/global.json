@@ -3,7 +3,9 @@
         "home": "Home",
         "about": "About",
         "works": "Works",
-        "experience": "Experience"
+        "experience": "Experience",
+        "colorMode": "Color Mode",
+        "language": "Language"
     },
     "about": {
         "title": "About",

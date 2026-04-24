@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { active_link } from '/theme'
 import { experience_list } from '../const'
 import { useTranslation } from 'react-i18next'
+import './Experience.css'
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
@@ -24,13 +25,13 @@ export const Experience = () => {
     
     return(
         <Box
-            id="experience"
-            h={{base: '', lg: '100vh'}}
-            pt='110px'
-            display='flex'
-            flexDirection='column'
-            alignItems='center'
-        >
+                id="experience"
+                h={{base: '', lg: '100vh'}}
+                pt='110px'
+                display='flex'
+                flexDirection='column'
+                alignItems='center'
+            >
             <motion.div
                 variants={fadeInUp}
                 initial="hidden"
@@ -49,34 +50,52 @@ export const Experience = () => {
             </motion.div>
 
             <Box
+                className="experience-list-wrapper"
                 padding='110px 50px'
                 w='100%'
+                position='relative'
+                display='flex'
+                justifyContent='center'
             >
-                {
-                    isLargerThan768 ? (
-                        <hr
-                            style={{height: '1px', width: '100%', backgroundColor: colorText(), borderRadius: '10px'}}
-                        />
-                    ) : (
-                        <></>
-                    )
-                }
+                {isLargerThan768 && (
+                    <Box
+                        className="experience-line"
+                        position='absolute'
+                        top='31%'
+                        left='0'
+                        right='0'
+                        h='1px'
+                        bg={colorText()}
+                        style={{borderRadius: '10px', transform: 'translateY(-50%)'}}
+                        zIndex={0}
+                    />
+                )}
                 <UnorderedList
+                    className="experience-list"
                     display='flex'
-                    flexDirection={{base: "column", md: 'row', lg: 'row'}}
-                    justifyContent='space-around'
+                    flexDirection='row'
+                    justifyContent='center'
+                    alignItems='center'
                     gap='100px'
                     width='100%'
+                    m='0'
+                    p='0'
+                    position='relative'
                 >
                     {experience_list.map(({id})=>{
                         return(
                             <ListItem key={id}
+                                className="experience-item"
                                 display='flex'
                                 flexDirection='column'
                                 alignItems='center'
-                                mt='-15px'
+                                listStyleType='none'
+                                w='100%'
+                                position='relative'
+                                zIndex={1}
                                 >
                                 <motion.div
+                                    className="circle"
                                     whileHover={{ scale: 1.5, rotate: 40 }}
                                     whileTap={{
                                         scale: 2,
@@ -84,20 +103,23 @@ export const Experience = () => {
                                     }}
                                     onHoverStart={() => console.log('si')}
                                     style={{ backgroundColor: colorText(), width: '28px', height: '28px', borderRadius: '100px'}}
-                                /> 
+                                />
                                 <motion.div
                                     variants={fadeInUp}
                                     initial="hidden"
                                     whileInView="visible"
                                     exit="exit"
                                     viewport={{ once: false, amount: 0.3 }}
+                                    w='100%'
                                 >
                                     <Box display='flex'
+                                        className="experience-content"
                                         flexDirection='column'
                                         alignItems='center'
                                         textAlign='center'
                                         gap='15px'
                                         pt='10px'
+                                        px='20px'
                                     >
                                         <Text> {t(`experience.${id}.date`)}</Text>
                                         <Text>{t(`experience.${id}.title`)}</Text>

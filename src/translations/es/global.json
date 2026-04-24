@@ -3,7 +3,9 @@
         "home": "Inicio",
         "about": "Sobre mi",
         "works": "Trabajos",
-        "experience": "Experiencia"
+        "experience": "Experiencia",
+        "colorMode": "Modo de Color",
+        "language": "Idioma"
     },
     "about": {
         "title": "Acerca de",

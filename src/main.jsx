@@ -12,6 +12,7 @@ import WorksPage from './pages/WorksPage.jsx'
 import { AnimatePresence } from 'framer-motion'
 import { useEffect } from 'react'
 import { bg_color } from '../theme.js'
+import { ScrollToTop } from './components/ScrollToTop'
 
 i18n
   .use(initReactI18next)
@@ -97,6 +98,7 @@ const AppWrapper = () => {
 
   return (
     <I18nextProvider i18n={i18n}>
+      <ScrollToTop />
       <AnimatePresence mode="wait">
       <Routes>
           <Route path="/" Component={App} />

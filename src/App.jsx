@@ -6,11 +6,29 @@ import { Experience } from './pages/Experience'
 import { Home } from './pages/Home'
 import { Works } from './pages/Works'
 import { LanguageChange } from './components/LanguageChange'
+import { useEffect } from 'react'
 import transition from '../transition'
 
 const App = () => {
 
+  const colorMode = useColorModeValue('light', 'dark')
   const bg = useColorModeValue(bg_color.light, bg_color.dark)
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', colorMode)
+  }, [colorMode])
+
+  useEffect(() => {
+    const handleAnchorClick = (e) => {
+      const target = e.target.closest('a[href^="#"]');
+      if (target) {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }
+    };
+
+    document.addEventListener('click', handleAnchorClick);
+    return () => document.removeEventListener('click', handleAnchorClick);
+  }, []);
   
   return (
       <Box
