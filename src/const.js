@@ -39,6 +39,13 @@ export const routes = [
 export const works = [
     {
         id: 1,
+        name: 'Duel Tracker',
+        img: '/duel-tracker-preview.PNG',
+        demo: '/duel-tracker-demo-unscreen.gif',
+        type: 1
+    },
+    {
+        id: 2,
         name: 'Style Dealer',
         img: '/style-dealer-preview.jpg',
         demo: '/style-dealer-demo-unscreen.gif',
@@ -50,7 +57,7 @@ export const works = [
         type: 1
     },
     {
-        id: 2,
+        id: 3,
         name: 'Gastos App',
         img: '/gastos.jpeg',
         demo: '/gastos-demo.gif',
@@ -62,7 +69,7 @@ export const works = [
         type: 2
     },
     {
-        id: 3,
+        id: 4,
         name: 'Web Scrapper',
         img: '/webScrapper-preview.jpg',
         demo: '/webScrapper-demo.gif',
@@ -74,7 +81,7 @@ export const works = [
         type: 1
     },
     {
-        id: 4,
+        id: 5,
         name: 'Ricodelik Portfolio',
         img: '/ricodelik-preview.jpg',
         demo: '/ricodelik-demo.gif',
